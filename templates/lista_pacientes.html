@@ -1,0 +1,16 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+    <h2>Lista de Pacientes</h2>
+
+    <ul style="font-size: 20px">
+        {% for paciente in pacientes %}
+            <li>
+                {{ paciente.cpf}} -
+                {{ paciente.nome_paciente}} -
+                {{ paciente.get_data_lancamento}}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
