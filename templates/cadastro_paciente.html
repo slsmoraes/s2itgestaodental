@@ -1,0 +1,167 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+
+    <h2>Cadastro de Paciente</h2>
+
+    <div class="container">
+      <form action="submit" method="POST">{% csrf_token %}
+        <!-- CLINICA -->
+          <div>
+              <div>
+                  <label>Clinica</label>
+              </div>
+              <div>
+                  <input type="text" name="clinica" size="20">
+              </div>
+          </div>
+        <!-- TIPO -->
+        <div>
+            <div>
+                <label>Tipo</label>
+            </div>
+            <div>
+                <input type="text" name="tipo" size="20">
+            </div>
+        </div>
+
+          <!-- DATA DE LANÇAMENTO -->
+          <div>
+              <div>
+                  <label>Data de Lancamento</label>
+              </div>
+              <div>
+                  <input type="datetime-local" name="data_lancamento"
+                         value="{{ paciente.get_data_lancamento }}">
+              </div>
+          </div>
+
+        <!-- CPF -->
+        <div>
+          <div>
+            <label>CPF</label>
+          </div>
+          <div>
+            <input type="text" name="cpf">
+          </div>
+          <!-- NOME DO PACIENTE-->
+          <div>
+            <label>Nome do Paciente</label>
+          </div>
+          <div>
+            <input type="text" name="nome_paciente">
+          </div>
+        </div>
+
+        <!-- CELULARES -->
+        <div>
+          <div>
+            <label>Celular #1</label>
+          </div>
+          <div>
+            <input type="text" name="celular_1">
+          </div>
+          <div>
+            <label>Celular #2</label>
+          </div>
+          <div">
+            <input type="text" name="celular_2">
+          </div>
+        </div>
+
+        <div>
+          <!-- TELEFONE FIXO -->
+          <div>
+            <label>Telafone Fixo</label>
+          </div>
+          <div>
+            <input type="text" name="telefone">
+          </div>
+          <div>
+            <label>Ramal</label>
+          </div>
+          <div>
+            <input type="text" name="ramal">
+          </div>
+        </div>
+
+        <!-- INDICAÇÃO MIDIA -->
+        <div>
+          <div>
+            <label>Indicação Midia</label>
+          </div>
+          <div>
+            <input type="text" name="indicacao_midia">
+          </div>
+        </div>
+          <!-- NOME INDICANTE -->
+        <div>
+          <div>
+            <label>Nome Indicante</label>
+          </div>
+          <div>
+            <input type="text" name="nome_indicante">
+          </div>
+          <div>
+            <label>CPF Indicante</label>
+          </div>
+          <div>
+            <input type="text" name="cpf_indicante">
+          </div>
+        </div>
+
+        <!-- DENTISTA -->
+        <div>
+          <div>
+            <label>Dentista Nick</label>
+          </div>
+          <div>
+            <input type="text" name="dentista_nick">
+          </div>
+        </div>
+
+        <!-- ESPECIALIDADE -->
+        <div>
+          <div>
+            <label>Especialidade</label>
+          </div>
+          <div>
+            <input type="text" name="especialidade">
+          </div>
+        </div>
+
+        <!-- TABELA -->
+        <div>
+          <div>
+            <label>Tabela</label>
+          </div>
+          <div>
+            <input type="text" name="tabela">
+          </div>
+        </div>
+
+        <!-- No CARTEIRA PLANO -->
+        <div>
+          <div>
+            <label>No Carteira Plano</label>
+          </div>
+          <div>
+            <input type="text" name="carteira_plano" size="10">
+          </div>
+        </div>
+
+          <!-- BOTÕES -->
+          <div>
+              <br>
+              <button type="submit">Salvar</button>
+              <a href="/">
+                  <button type="button">Cancelar</button>
+              </a>
+
+          </div>
+
+      </form>
+
+    </div>
+
+{% endblock %}

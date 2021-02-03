@@ -23,6 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='/paciente/')),
     path('paciente/', views.lista_pacientes),
+    path('paciente/cadastro/', views.cadastro_paciente),
+    path('paciente/cadastro/submit', views.submit_paciente),
+
     path('login/', views.login_user),
     path('login/submit', views.submit_login),
     path('logout/', views.logout_user),
