@@ -12,7 +12,7 @@
                 {{ paciente.cpf}} -
                 {{ paciente.nome_paciente}} -
                 {{ paciente.get_data_lancamento}}
-                (  <a href="#">Editar</a>
+                (  <a href="cadastro/?id={{paciente.id}}">Editar</a>
                  / <a href="cadastro/delete/{{ paciente.id}}/">Excluir</a>)
             </li>
         {% endfor %}

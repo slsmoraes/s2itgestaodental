@@ -6,13 +6,14 @@
 
     <div class="container">
       <form action="submit" method="POST">{% csrf_token %}
+          <input type="number" name="id_paciente" value="{{ paciente.id }}" hidden>
         <!-- CLINICA -->
           <div>
               <div>
                   <label>Clinica</label>
               </div>
               <div>
-                  <input type="text" name="clinica" size="20">
+                  <input type="text" name="clinica" size="20" value="{{ paciente.clinica}}">
               </div>
           </div>
         <!-- TIPO -->
@@ -21,7 +22,7 @@
                 <label>Tipo</label>
             </div>
             <div>
-                <input type="text" name="tipo" size="20">
+                <input type="text" name="tipo" size="20"  value="{{ paciente.tipo}}">
             </div>
         </div>
 
@@ -32,6 +33,7 @@
               </div>
               <div>
                   <input type="datetime-local" name="data_lancamento"
+                         value="{{ paciente.get_data_input_lancamento }}"
                          value="{{ paciente.get_data_lancamento }}">
               </div>
           </div>
@@ -42,14 +44,14 @@
             <label>CPF</label>
           </div>
           <div>
-            <input type="text" name="cpf">
+            <input type="text" name="cpf" value="{{ paciente.cpf}}">
           </div>
           <!-- NOME DO PACIENTE-->
           <div>
             <label>Nome do Paciente</label>
           </div>
           <div>
-            <input type="text" name="nome_paciente">
+            <input type="text" name="nome_paciente" value="{{ paciente.nome_paciente}}">
           </div>
         </div>
 
@@ -59,13 +61,13 @@
             <label>Celular #1</label>
           </div>
           <div>
-            <input type="text" name="celular_1">
+            <input type="text" name="celular_1" value="{{ paciente.celular_1}}">
           </div>
           <div>
             <label>Celular #2</label>
           </div>
           <div">
-            <input type="text" name="celular_2">
+            <input type="text" name="celular_2" value="{{ paciente.celular_2}}">
           </div>
         </div>
 
@@ -75,13 +77,13 @@
             <label>Telafone Fixo</label>
           </div>
           <div>
-            <input type="text" name="telefone">
+            <input type="text" name="telefone" value="{{ paciente.telefone}}">
           </div>
           <div>
             <label>Ramal</label>
           </div>
           <div>
-            <input type="text" name="ramal">
+            <input type="text" name="ramal" value="{{ paciente.ramal}}">
           </div>
         </div>
 
@@ -91,7 +93,7 @@
             <label>Indicação Midia</label>
           </div>
           <div>
-            <input type="text" name="indicacao_midia">
+            <input type="text" name="indicacao_midia"value="{{ paciente.indicacao_midia}}">
           </div>
         </div>
           <!-- NOME INDICANTE -->
@@ -100,13 +102,13 @@
             <label>Nome Indicante</label>
           </div>
           <div>
-            <input type="text" name="nome_indicante">
+            <input type="text" name="nome_indicante" value="{{ paciente.nome_indicante}}">
           </div>
           <div>
             <label>CPF Indicante</label>
           </div>
           <div>
-            <input type="text" name="cpf_indicante">
+            <input type="text" name="cpf_indicante" value="{{ paciente.cpf_indicante}}">
           </div>
         </div>
 
@@ -116,7 +118,7 @@
             <label>Dentista Nick</label>
           </div>
           <div>
-            <input type="text" name="dentista_nick">
+            <input type="text" name="dentista_nick" value="{{ paciente.dentista_nick}}">
           </div>
         </div>
 
@@ -126,9 +128,13 @@
             <label>Especialidade</label>
           </div>
           <div>
-            <input type="text" name="especialidade">
+            <input type="text" name="especialidade" value="{{ paciente.especialidade}}">
           </div>
         </div>
+
+
+
+
 
         <!-- TABELA -->
         <div>
@@ -136,7 +142,7 @@
             <label>Tabela</label>
           </div>
           <div>
-            <input type="text" name="tabela">
+            <input type="text" name="tabela" value="{{ paciente.tabela}}">
           </div>
         </div>
 
@@ -146,7 +152,7 @@
             <label>No Carteira Plano</label>
           </div>
           <div>
-            <input type="text" name="carteira_plano" size="10">
+            <input type="text" name="carteira_plano" size="10" value="{{ paciente.carteira_plano}}">
           </div>
         </div>
 
